@@ -1,0 +1,64 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@company.com",
+      "role": "Manager",
+      "department": "IT",
+      "salary": 120000,
+      "joinDate": "2020-01-15",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@company.com",
+      "role": "Developer",
+      "department": "IT",
+      "salary": 85000,
+      "joinDate":  "2021-03-20",
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "name": "Mike Johnson",
+      "email": "mike.johnson@company.com",
+      "role": "Designer",
+      "department": "Marketing",
+      "salary": 75000,
+      "joinDate":  "2019-06-10",
+      "isActive": true
+    },
+    {
+      "id":  4,
+      "name":  "Sarah Williams",
+      "email": "sarah.williams@company. com",
+      "role": "Analyst",
+      "department":  "Finance",
+      "salary": 95000,
+      "joinDate":  "2020-11-05",
+      "isActive": true
+    },
+    {
+      "id":  5,
+      "name":  "Robert Brown",
+      "email": "robert.brown@company.com",
+      "role": "Consultant",
+      "department": "HR",
+      "salary": 88000,
+      "joinDate":  "2021-08-12",
+      "isActive": false
+    },
+    {
+      "id":  6,
+      "name":  "Emily Davis",
+      "email": "emily.davis@company. com",
+      "role": "Developer",
+      "department": "IT",
+      "salary": 82000,
+      "joinDate":  "2022-01-08",
+      "isActive": true
+    }
+  ]
+}

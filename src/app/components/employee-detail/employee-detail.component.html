@@ -1,0 +1,53 @@
+<div class="container">
+  <button mat-button (click)="goBack()">← Back to List</button>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="isLoading" class="loader">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <div *ngIf="employee && !isLoading" class="detail-card">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ employee. name }}</mat-card-title>
+        <mat-card-subtitle>{{ employee.role }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="detail-row">
+          <span class="label">Email:</span>
+          <span class="value">{{ employee.email }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Department: </span>
+          <span class="value">{{ employee.department }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Salary:</span>
+          <span class="value">
+            {{ employee.salary | currency: 'USD' }}
+          </span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Join Date:</span>
+          <span class="value">{{ employee. joinDate | date: 'MM/dd/yyyy' }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Status:</span>
+          <span class="value">
+            <mat-chip [color]="employee.isActive ? 'primary' : 'warn'" selected>
+              {{ employee.isActive ? 'Active' : 'Inactive' }}
+            </mat-chip>
+          </span>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="editEmployee()">
+          Edit Employee
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
