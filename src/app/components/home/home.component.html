@@ -1,0 +1,47 @@
+<div class="home-container">
+  <mat-card class="welcome-card">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>business</mat-icon>
+        Welcome to Employee Management Dashboard
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="subtitle">
+        Manage your company's employee information efficiently and effectively.
+      </p>
+      <div class="features">
+        <div class="feature">
+          <mat-icon>people</mat-icon>
+          <h3>Employee Directory</h3>
+          <p>View and manage all employee records in one place</p>
+        </div>
+        <div class="feature">
+          <mat-icon>person_add</mat-icon>
+          <h3>Add New Employees</h3>
+          <p>Easily add new team members to your organization</p>
+        </div>
+        <div class="feature">
+          <mat-icon>edit</mat-icon>
+          <h3>Update Information</h3>
+          <p>Keep employee details current and accurate</p>
+        </div>
+        <div class="feature">
+          <mat-icon>analytics</mat-icon>
+          <h3>Department Filtering</h3>
+          <p>Filter employees by department for better organization</p>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" routerLink="/employees">
+        <mat-icon>arrow_forward</mat-icon>
+        View Employee List
+      </button>
+      <button mat-raised-button color="accent" routerLink="/add-employee">
+        <mat-icon>person_add</mat-icon>
+        Add New Employee
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

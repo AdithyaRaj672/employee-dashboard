@@ -51,7 +51,7 @@ export class EmployeeListComponent implements OnInit, OnDestroy {
     'role',
     'department',
     'salary',
-    'joiningDate',
+    'joinDate',
     'actions'
   ];
 
