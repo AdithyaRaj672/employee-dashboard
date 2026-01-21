@@ -83,7 +83,7 @@ export class EmployeeService {
   // Get all employees
   getEmployees(): Observable<Employee[]> {
     return this.http.get<Employee[]>(this.apiUrl).pipe(
-      tap(employees => this.employeesSubject. next(employees)),
+      tap(employees => this.employeesSubject.next(employees)),
       catchError(error => {
         // Use mock data if API is not available
         console.warn('API not available, using mock data');
@@ -116,7 +116,9 @@ export class EmployeeService {
       }),
       catchError(error => {
         // Use mock data if API is not available
-        const newId = Math.max(...this.mockEmployees.map(e => e.id), 0) + 1;
+        const newId = this.mockEmployees.length > 0 
+          ? Math.max(...this.mockEmployees.map(e => e.id)) + 1 
+          : 1;
         const newEmployee = { ...employee, id: newId } as Employee;
         this.mockEmployees.push(newEmployee);
         const currentEmployees = this.employeesSubject.getValue();
@@ -130,11 +132,11 @@ export class EmployeeService {
   updateEmployee(id:  number, employee: Employee): Observable<Employee> {
     return this.http.put<Employee>(`${this.apiUrl}/${id}`, employee).pipe(
       tap(updatedEmployee => {
-        const currentEmployees = this.employeesSubject. getValue();
+        const currentEmployees = this.employeesSubject.getValue();
         const index = currentEmployees.findIndex(e => e.id === id);
         if (index !== -1) {
           currentEmployees[index] = updatedEmployee;
-          this.employeesSubject. next([...currentEmployees]);
+          this.employeesSubject.next([...currentEmployees]);
         }
       }),
       catchError(error => {

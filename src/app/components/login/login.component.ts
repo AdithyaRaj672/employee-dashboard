@@ -31,7 +31,9 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   login(): void {
-    // Simple authentication - accept any non-empty username/password
+    // DEMO ONLY: Simple authentication for demonstration purposes
+    // In production, this should validate against a secure backend
+    // Accept any non-empty username/password for demo
     if (this.username && this.password) {
       // Store auth token in localStorage
       localStorage.setItem('auth_token', 'demo-token-' + Date.now());
