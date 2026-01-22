@@ -47,6 +47,7 @@ mat-card-title {
   border-radius: 8px;
   background-color: #f5f5f5;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .feature:hover {
