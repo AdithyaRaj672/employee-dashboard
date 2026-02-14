@@ -145,11 +145,82 @@ employee-dashboard/
 | AddEditEmployeeComponent | Add/Edit employees |
 | ConfirmDialogComponent | Delete confirmation |
 
-## 🔧 Services
+## 🔧 Services & Architecture
 
-- **EmployeeService**:  CRUD operations
-- **AuthGuard**: Route protection
-- **HttpConfigInterceptor**: HTTP request/response handling
+### Services
+- **EmployeeService**: CRUD operations with RxJS Observables
+  - BehaviorSubject for real-time data updates
+  - Fallback to mock data when API is unavailable
+  - Full CRUD functionality (Create, Read, Update, Delete)
+  
+- **AuthGuard**: Functional route guard for authentication
+  - Protects employee routes from unauthorized access
+  - Redirects to login page when not authenticated
+  
+- **HTTP Interceptor**: Functional interceptor for HTTP requests
+  - Adds Authorization header with JWT token
+  - Handles errors and logs HTTP errors
+  - Sets Content-Type headers automatically
+
+### Architecture Highlights
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Angular Application                       │
+├─────────────────────────────────────────────────────────────┤
+│  Components Layer                                            │
+│  ├─ NavbarComponent (Navigation)                            │
+│  ├─ HomeComponent (Landing)                                 │
+│  ├─ LoginComponent (Authentication)                         │
+│  ├─ EmployeeListComponent (List + Filter + Pipes)           │
+│  ├─ EmployeeDetailComponent (View Details)                  │
+│  ├─ AddEditEmployeeComponent (Reactive Forms)               │
+│  └─ ConfirmDialogComponent (Material Dialog)                │
+├─────────────────────────────────────────────────────────────┤
+│  Services Layer                                              │
+│  ├─ EmployeeService (Business Logic + HTTP)                 │
+│  └─ AuthGuard (Route Protection)                            │
+├─────────────────────────────────────────────────────────────┤
+│  Interceptors                                                │
+│  └─ HTTP Interceptor (Auth Token + Error Handling)          │
+├─────────────────────────────────────────────────────────────┤
+│  Pipes & Directives                                          │
+│  ├─ DepartmentFilterPipe (Custom Filter)                    │
+│  └─ HighlightSalaryDirective (DOM Manipulation)             │
+├─────────────────────────────────────────────────────────────┤
+│  Models                                                       │
+│  └─ Employee Interface (Type Safety)                        │
+└─────────────────────────────────────────────────────────────┘
+         ↓ HTTP Requests (via HttpClient + Interceptor)
+┌─────────────────────────────────────────────────────────────┐
+│              JSON Server (Mock Backend API)                  │
+│              http://localhost:3000/employees                 │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Key Features Implementation
+
+#### Task 3: Services and Routing ✅
+- ✅ EmployeeService with Dependency Injection
+- ✅ HTTP Interceptor configured for auth and error handling
+- ✅ Angular Router with parameterized routes
+- ✅ AuthGuard protecting employee routes
+- ✅ Route parameters for dynamic employee detail loading
+
+#### Task 4: Pipes and Custom Directives ✅
+- ✅ Built-in pipes: `currency`, `date` for formatting
+- ✅ Custom pipe: `DepartmentFilterPipe` for filtering employees
+- ✅ Custom directive: `HighlightSalaryDirective` for visual indicators
+- ✅ Lifecycle hooks: `ngOnInit`, `ngOnDestroy` for data management
+
+#### Task 5: Forms, Material & Reactive Programming ✅
+- ✅ Reactive forms with FormBuilder and FormGroup
+- ✅ Form validation (required, minLength, email, min)
+- ✅ HttpClient with RxJS Observables
+- ✅ Error handling and HTTP interceptors
+- ✅ Angular Material components (MatTable, MatFormField, MatButton, etc.)
+- ✅ Material theming with custom color palette
+- ✅ Responsive UI with Material Design
 
 ## 📚 Learning Outcomes
 
