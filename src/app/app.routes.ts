@@ -4,12 +4,16 @@ import { EmployeeDetailComponent } from './components/employee-detail/employee-d
 import { AddEditEmployeeComponent } from './components/add-edit-employee/add-edit-employee.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { AuthGuard } from './services/auth.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'profile', component: ProfileComponent },
   { 
     path: 'employees', 
     component: EmployeeListComponent,

@@ -2,7 +2,6 @@
   <mat-card class="welcome-card">
     <mat-card-header>
       <mat-card-title>
-        <mat-icon>business</mat-icon>
         Welcome to Employee Management Dashboard
       </mat-card-title>
     </mat-card-header>
@@ -12,35 +11,32 @@
       </p>
       <div class="features">
         <div class="feature" (click)="navigateToEmployees()">
-          <mat-icon>people</mat-icon>
-          <h3>Employee Directory</h3>
+          <h3>📋 Employee Directory</h3>
           <p>View and manage all employee records in one place</p>
         </div>
         <div class="feature" (click)="navigateToAddEmployee()">
-          <mat-icon>person_add</mat-icon>
-          <h3>Add New Employees</h3>
+          <h3>➕ Add New Employees</h3>
           <p>Easily add new team members to your organization</p>
         </div>
         <div class="feature" (click)="navigateToEmployees()">
-          <mat-icon>edit</mat-icon>
-          <h3>Update Information</h3>
+          <h3>✏️ Update Information</h3>
           <p>Keep employee details current and accurate</p>
         </div>
         <div class="feature" (click)="navigateToEmployees()">
-          <mat-icon>analytics</mat-icon>
-          <h3>Department Filtering</h3>
+          <h3>🏢 Department Filtering</h3>
           <p>Filter employees by department for better organization</p>
         </div>
       </div>
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary" routerLink="/employees">
-        <mat-icon>arrow_forward</mat-icon>
-        View Employee List
+        View Employee List →
       </button>
       <button mat-raised-button color="accent" routerLink="/add-employee">
-        <mat-icon>person_add</mat-icon>
         Add New Employee
+      </button>
+      <button mat-raised-button routerLink="/dashboard">
+        View Dashboard
       </button>
     </mat-card-actions>
   </mat-card>

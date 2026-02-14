@@ -1,0 +1,41 @@
+<div class="profile-container">
+  <mat-card class="profile-card">
+    <mat-card-header>
+      <mat-card-title>👤 User Profile</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="profile-avatar">
+        {{ username.charAt(0).toUpperCase() }}
+      </div>
+
+      <div class="profile-details">
+        <div class="detail-row">
+          <span class="label">Username:</span>
+          <span class="value">{{ username }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Status:</span>
+          <span class="value" [class.active]="isLoggedIn" [class.inactive]="!isLoggedIn">
+            {{ isLoggedIn ? 'Logged In' : 'Guest' }}
+          </span>
+        </div>
+        <div class="detail-row" *ngIf="isLoggedIn">
+          <span class="label">Login Time:</span>
+          <span class="value">{{ loginTime }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Role:</span>
+          <span class="value">{{ isLoggedIn ? 'Administrator' : 'Viewer' }}</span>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="warn" *ngIf="isLoggedIn" (click)="logout()">
+        Logout
+      </button>
+      <button mat-raised-button color="primary" *ngIf="!isLoggedIn" (click)="goToLogin()">
+        Login
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

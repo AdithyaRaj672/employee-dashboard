@@ -2,21 +2,18 @@
   <mat-card class="login-card">
     <mat-card-header>
       <mat-card-title>
-        <mat-icon>lock</mat-icon>
-        Employee Dashboard Login
+        🔒 Employee Dashboard Login
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <form (ngSubmit)="login()">
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Username</mat-label>
-          <mat-icon matPrefix>person</mat-icon>
           <input matInput [(ngModel)]="username" name="username" required>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Password</mat-label>
-          <mat-icon matPrefix>lock</mat-icon>
           <input matInput type="password" [(ngModel)]="password" name="password" required>
         </mat-form-field>
 
@@ -26,11 +23,9 @@
 
         <div class="login-actions">
           <button mat-raised-button color="primary" type="submit" class="full-width">
-            <mat-icon>login</mat-icon>
             Login
           </button>
           <button mat-button color="accent" type="button" (click)="continueAsGuest()" class="full-width">
-            <mat-icon>visibility</mat-icon>
             Continue as Guest
           </button>
         </div>
