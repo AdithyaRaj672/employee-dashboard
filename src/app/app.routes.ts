@@ -10,9 +10,25 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'employees', component: EmployeeListComponent },
-  { path: 'employee/:id', component: EmployeeDetailComponent },
-  { path: 'add-employee', component: AddEditEmployeeComponent },
-  { path: 'edit-employee/:id', component: AddEditEmployeeComponent },
+  { 
+    path: 'employees', 
+    component: EmployeeListComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'employee/:id', 
+    component: EmployeeDetailComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'add-employee', 
+    component: AddEditEmployeeComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'edit-employee/:id', 
+    component: AddEditEmployeeComponent,
+    canActivate: [AuthGuard]
+  },
   { path: '**', redirectTo: 'home' }
 ];

@@ -11,6 +11,8 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { EmployeeService } from '../../services/employee.service';
 import { Employee } from '../../models/emplyee.model';
@@ -32,6 +34,8 @@ import { DepartmentFilterPipe } from '../../pipes/department-filter.pipe';
     MatDialogModule,
     MatProgressSpinnerModule,
     MatSelectModule,
+    MatTooltipModule,
+    MatFormFieldModule,
 
     // Custom
     HighlightSalaryDirective,
