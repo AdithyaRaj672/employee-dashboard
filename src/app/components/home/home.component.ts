@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
     CommonModule,
     RouterModule,
     MatButtonModule,
-    MatCardModule,
-    MatIconModule
+    MatCardModule
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']

@@ -10,7 +10,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
-import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
@@ -30,7 +29,6 @@ import { DepartmentFilterPipe } from '../../pipes/department-filter.pipe';
     // Angular Material
     MatTableModule,
     MatButtonModule,
-    MatIconModule,
     MatDialogModule,
     MatProgressSpinnerModule,
     MatSelectModule,

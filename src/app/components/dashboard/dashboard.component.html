@@ -1,0 +1,81 @@
+<div class="dashboard-container">
+  <h2>📊 Dashboard Overview</h2>
+
+  <div class="stats-grid">
+    <mat-card class="stat-card" (click)="navigateTo('/employees')">
+      <mat-card-content>
+        <div class="stat-value">{{ totalEmployees }}</div>
+        <div class="stat-label">Total Employees</div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <mat-card-content>
+        <div class="stat-value">{{ activeEmployees }}</div>
+        <div class="stat-label">Active Employees</div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <mat-card-content>
+        <div class="stat-value">{{ totalDepartments }}</div>
+        <div class="stat-label">Departments</div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <mat-card-content>
+        <div class="stat-value">{{ averageSalary | currency: 'USD':'symbol':'1.0-0' }}</div>
+        <div class="stat-label">Average Salary</div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="dashboard-sections">
+    <mat-card class="section-card">
+      <mat-card-header>
+        <mat-card-title>🏢 Department Breakdown</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="department-list">
+          <div class="department-item" *ngFor="let dept of departments">
+            <span class="dept-name">{{ dept.name }}</span>
+            <div class="dept-bar-container">
+              <div class="dept-bar" [style.width.%]="(dept.count / totalEmployees) * 100"></div>
+            </div>
+            <span class="dept-count">{{ dept.count }}</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="section-card">
+      <mat-card-header>
+        <mat-card-title>🕐 Recent Employees</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="recent-list">
+          <div class="recent-item" *ngFor="let emp of recentEmployees">
+            <div class="recent-info">
+              <strong>{{ emp.name }}</strong>
+              <span class="recent-role">{{ emp.role }}</span>
+            </div>
+            <span class="recent-date">{{ emp.joinDate | date: 'MMM d, yyyy' }}</span>
+          </div>
+          <div *ngIf="recentEmployees.length === 0" class="empty-state">
+            No employees found.
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="dashboard-actions">
+    <button mat-raised-button color="primary" (click)="navigateTo('/employees')">
+      View All Employees
+    </button>
+    <button mat-raised-button color="accent" (click)="navigateTo('/add-employee')">
+      Add New Employee
+    </button>
+  </div>
+</div>
