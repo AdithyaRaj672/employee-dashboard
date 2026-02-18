@@ -45,7 +45,9 @@ export class LoginComponent {
   }
 
   continueAsGuest(): void {
-    // Allow guest access without authentication
+    // Allow guest access with authentication token
+    localStorage.setItem('auth_token', 'guest-token-' + Date.now());
+    localStorage.setItem('username', 'Guest');
     this.router.navigate(['/home']);
   }
 }
